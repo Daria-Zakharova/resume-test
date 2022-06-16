@@ -1,1 +1,282 @@
+/* Vars */
 
+:root {
+    --aside-bg-color: #1e2939;
+    --accent-color: #fb6d3a;
+
+    --txt-color: #595959;
+    --aside-txt-color: #ffffff;
+    --period-txt-color: #a8a8a8;
+}
+
+/* Resets and body styles */
+
+body {
+    padding-top: 40px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: calc(24/14);
+    color: var(--txt-color);
+}
+
+h1, h2, p {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+
+    max-width: 1200px;
+    margin: 0 auto;
+
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    display: block;
+    min-width: 370px;
+    max-width: 100%;
+    height: auto;
+}
+
+a,
+abbr[title] {
+    text-decoration: none;
+    color: inherit;
+}
+
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar */
+
+
+@keyframes color {
+    0% {
+        background-color: black;
+    }
+
+    25% {
+        background-color: var(--aside-bg-color);
+    }
+
+    50% {
+        background-color: #31435e;
+    }
+
+    75% {
+        background-color: #4e6a96;
+    }
+
+    100% {
+        background-color: #55a392;
+    }
+}
+
+aside {
+    padding-top: 40px;
+
+    font-size: 14px;
+    line-height: calc(24/14);
+
+    color: var(--aside-txt-color);
+    background-color: var(--aside-bg-color);
+
+    animation: color 5000ms linear 0ms infinite alternate-reverse none;
+    
+}
+
+aside img {
+    margin-bottom: 50px;
+}
+
+aside section {
+    padding: 0 40px;
+}
+
+.aside-title {
+    font-size: 22px;
+    line-height: calc(27/22);
+    margin-bottom: 8px;
+}
+
+.contacts {
+    margin-bottom: 50px;
+}
+
+.contacts li {
+    color: #ffffff80;    
+}
+
+.phone::before {
+    content: "C:";
+    font-weight: 700;
+    color: var(--aside-txt-color);
+    margin-right: 1em;
+}
+
+.underlined {
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+}
+
+.mail::before {
+    content: "E:";
+    margin-right: 1em;
+    
+    font-weight: 700;
+    color: var(--aside-txt-color);
+}
+
+.tech-skills {
+    margin-bottom: 45px;
+}
+
+.soft-skills li,
+.tech-skills li {
+    position: relative;
+    padding-left: 1em;;
+}
+
+.soft-skills li::before,
+.tech-skills li::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    vertical-align: middle;
+    margin-right: 1em;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+}
+
+/* Main */
+
+main {
+    padding: 100px 220px 100px 90px;
+}
+
+main section:not(:last-child) {
+    padding-bottom: 40px;
+}
+
+.accent {
+    color: var(--accent-color);
+}
+
+/* Headings */
+
+main [class*="title"] {
+    margin-bottom: 12px;
+
+    font-weight: 700;
+
+    color: #000000;
+}
+
+.about .subtitle,
+.education .subtitle {
+    margin-bottom: 20px;
+
+    font-size: inherit;
+    line-height: calc(17/14);
+}
+
+.about h1 {
+    margin-bottom: 25px;
+
+    font-size: 44px;
+    line-height: calc(55/45);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: color 5000ms linear 0ms infinite alternate-reverse none;
+}
+
+.section-title {
+    font-size: 22px;
+    line-height: calc(27/22);
+}
+
+.work-subtitle,
+.education-subtitle {
+    font-size: 16px;
+    line-height: calc(20/16);
+}
+
+.period {
+    font-size: 12px;
+    line-height: calc(15/12);
+    
+    color: var(--period-txt-color);
+}
+
+.period:not(:last-child) {
+    margin-bottom: 8px;
+}
+/* About */
+
+.about {
+    max-width: 400px;
+}
+/* Projects */
+
+.projects .list {
+    padding-left: 20px;
+    list-style: decimal;
+    font-weight: 700;
+    color: #000000;
+}
+
+.project, .project-wrap {
+    display: flex;
+    width: 100%;
+
+    font-weight: 400;
+    color:var(--txt-color);
+}
+
+.project-wrap {
+    align-items: baseline;
+    max-width: 350px;
+}
+
+.project-technologies {
+    word-wrap: none;
+    flex-shrink: 0;
+}
+
+.dashes{
+    flex-grow: 1;
+    border-bottom: 1px dashed currentColor;
+}
+
+.project-technologies::before {
+    content: "[";
+    font-weight: 700;
+    color: #000000;
+}
+
+.project-technologies::after {
+    content: "]";
+    font-weight: 700;
+    color: #000000;
+}
+
+/* Working Experience */
+
+.work-list {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.work-experience>.list>li:not(:last-child){
+    margin-bottom: 20px;
+}
